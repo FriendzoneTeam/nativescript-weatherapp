@@ -1,0 +1,11 @@
+<scroll-view>
+		<stack-layout>
+			
+			<Label [text]="weather.icon" class="icon" textWrap="true"/>
+			<Label [text]="weather.temperature + '°C'" class="temperature"/>
+			<Label [text]="weather.city + ',' + weather.country" class="location"/>
+			<Label text="{{ weatherType }}" class="weatherType"/>
+			<text-field returnKeyType="done" returnPress="weather.getWeather" autocorrect="false" autocapitalizationType="none" id="searchedCity" hint="Ciudad" [text]="weather.searchedCity" class="input" />
+
+		</stack-layout>
+</scroll-view>
