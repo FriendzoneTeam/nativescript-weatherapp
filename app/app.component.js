@@ -15,7 +15,7 @@ var AppComponent = (function () {
             template: "<page-router-outlet></page-router-outlet>"
         }),
         router_deprecated_1.RouteConfig([
-            { path: "Weather", component: weather_component_1.WeatherPage, name: "Weather", useAsDefault: true }
+            { path: "/Weather", component: weather_component_1.WeatherPage, name: "Weather", useAsDefault: true }
         ]), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

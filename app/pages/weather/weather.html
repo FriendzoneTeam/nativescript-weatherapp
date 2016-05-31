@@ -1,11 +1,9 @@
-<scroll-view>
-		<stack-layout>
-			
-			<Label [text]="weather.icon" class="icon" textWrap="true"/>
-			<Label [text]="weather.temperature + '°C'" class="temperature"/>
-			<Label [text]="weather.city + ',' + weather.country" class="location"/>
-			<Label text="{{ weatherType }}" class="weatherType"/>
-			<text-field returnKeyType="done" returnPress="weather.getWeather" autocorrect="false" autocapitalizationType="none" id="searchedCity" hint="Ciudad" [text]="weather.searchedCity" class="input" />
-
-		</stack-layout>
-</scroll-view>
+<ScrollView>
+		<StackLayout>
+			<Label [text]="weather.icon" class="icon" textWrap="true"></Label>
+			<Label [text]="weather.temperature" class="temperature"></Label>
+			<Label [text]="weather.city" class="location"></Label>
+			<Label [text]="weather.weatherType" class="weatherType"></Label>
+			<text-field returnKeyType="done" (returnPress)="testDone()" autocorrect="false" autocapitalizationType="none" id="searchedCity" hint="Ciudad" [text]="weather.searchedCity" class="input"></text-field>
+		</StackLayout>
+</ScrollView>

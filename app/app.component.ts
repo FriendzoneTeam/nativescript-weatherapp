@@ -12,7 +12,7 @@ import {WeatherPage} from "./pages/weather/weather.component";
 })
 
 @RouteConfig([
-    {path: "Weather", component: WeatherPage, name: "Weather", useAsDefault: true}
+    {path: "/Weather", component: WeatherPage, name: "Weather", useAsDefault: true}
 ])
 
 export class AppComponent {}
