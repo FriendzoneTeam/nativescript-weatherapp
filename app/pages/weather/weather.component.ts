@@ -12,15 +12,24 @@ import {ApiService} from '../../shared/api/api.service'
 })
 
 export class WeatherPage implements OnInit {
-    weather = new Weather(this._apiService)
+    weather: Weather;
     isLoading = false;
+    searchedCity: string = "Bucareti";
     
     // @ViewChild("searchedCity") searchedCity: ElementRef;
-    testDone () {
+    getWeather () {
         console.log("U Click me :-D")
-        console.log(`SearchedCity: ${this.weather.searchedCity}`)
+        console.log(`SearchedCity 2: ${this.searchedCity}`)
+        this._apiService.fetchWeather(this.searchedCity)
+        .subscribe(loadedWeather => {
+            console.log(JSON.stringify(loadedWeather))
+        });
     }
-    constructor(private _apiService: ApiService, private page: Page){}
+    
+    constructor(private _apiService: ApiService, private page: Page){
+        this.weather = new Weather(this._apiService)
+    }
+    
     ngOnInit () {
         console.log('OnInit :-)')
         

@@ -12,6 +12,7 @@ var ApiService = (function () {
         var headers = new http_1.Headers();
         headers.append("Content-Type", "application/json");
         var url = "" + config_1.Config.apiUrl + city + "&appid=b1b15e88fa797225412429c1c50c122a&apiKey=" + config_1.Config.apiKey;
+        console.log("Url => " + url);
         return this._http.get(url, {
             headers: headers
         })

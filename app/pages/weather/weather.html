@@ -4,6 +4,8 @@
 			<Label [text]="weather.temperature" class="temperature"></Label>
 			<Label [text]="weather.city" class="location"></Label>
 			<Label [text]="weather.weatherType" class="weatherType"></Label>
-			<text-field returnKeyType="done" (returnPress)="testDone()" autocorrect="false" autocapitalizationType="none" id="searchedCity" hint="Ciudad" [text]="weather.searchedCity" class="input"></text-field>
+			<TextField returnKeyType="done" (returnPress)="getWeather()" autocorrect="false" 
+			autocapitalizationType="none" hint="Ciudad" [(ngModel)]="searchedCity" 
+			class="input"></TextField>
 		</StackLayout>
 </ScrollView>

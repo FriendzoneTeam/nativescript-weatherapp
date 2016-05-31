@@ -13,10 +13,11 @@ export class ApiService {
         headers.append("Content-Type", "application/json");
         
         var url = `${Config.apiUrl}${city}&appid=b1b15e88fa797225412429c1c50c122a&apiKey=${Config.apiKey}`;
+        console.log(`Url => ${url}`);
         return this._http.get(url, {
             headers: headers
         })
-        .map(res => res.json())
+        .map(res => { return res.json() })
         .catch(this.handleErrors);
     }
 

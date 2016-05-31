@@ -7,13 +7,18 @@ var WeatherPage = (function () {
     function WeatherPage(_apiService, page) {
         this._apiService = _apiService;
         this.page = page;
-        this.weather = new weather_1.Weather(this._apiService);
         this.isLoading = false;
+        this.searchedCity = "Bucareti";
+        this.weather = new weather_1.Weather(this._apiService);
     }
     // @ViewChild("searchedCity") searchedCity: ElementRef;
-    WeatherPage.prototype.testDone = function () {
+    WeatherPage.prototype.getWeather = function () {
         console.log("U Click me :-D");
-        console.log("SearchedCity: " + this.weather.searchedCity);
+        console.log("SearchedCity 2: " + this.searchedCity);
+        this._apiService.fetchWeather(this.searchedCity)
+            .subscribe(function (loadedWeather) {
+            console.log(JSON.stringify(loadedWeather));
+        });
     };
     WeatherPage.prototype.ngOnInit = function () {
         console.log('OnInit :-)');
